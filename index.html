@@ -19,6 +19,21 @@
             align-items: center;
             background-color: white;
             font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+        }
+
+        .container {
+            text-align: center;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        .container.clicked {
+            transform: scale(0.95);
+            opacity: 0;
         }
 
         .heading {
@@ -34,10 +49,30 @@
             margin-top: 1rem;
             font-weight: 400;
         }
+
+        .click-hint {
+            position: absolute;
+            bottom: 2rem;
+            font-size: 0.9rem;
+            color: #999;
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
-    <h1 class="heading">Courseware</h1>
-    <p class="tagline">Empowering Education Through Technology</p>
+    <div class="container">
+        <h1 class="heading">Courseware</h1>
+        <p class="tagline">Empowering Education Through Technology</p>
+    </div>
+    <p class="click-hint">Click anywhere to continue</p>
+
+    <script>
+        document.body.addEventListener('click', function() {
+            document.querySelector('.container').classList.add('clicked');
+            setTimeout(() => {
+                window.location.href = 'landing.html';
+            }, 300);
+        });
+    </script>
 </body>
 </html>
