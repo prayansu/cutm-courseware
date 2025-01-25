@@ -17,14 +17,33 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: white;
             font-family: 'Poppins', sans-serif;
             cursor: pointer;
+            background: linear-gradient(-45deg, #DAF7A6, #d7bde2, #a2d9ce, #aed6f1);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         .container {
             text-align: center;
             transition: transform 0.3s ease, opacity 0.3s ease;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 2rem 3rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            backdrop-filter: blur(8px);
         }
 
         .container:hover {
@@ -34,6 +53,12 @@
         .container.clicked {
             transform: scale(0.95);
             opacity: 0;
+        }
+
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 1rem;
         }
 
         .heading {
@@ -54,13 +79,15 @@
             position: absolute;
             bottom: 2rem;
             font-size: 0.9rem;
-            color: #999;
+            color: #333;
             opacity: 0.8;
+            text-shadow: 0 2px 4px rgba(255,255,255,0.3);
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <img src="static/logo.png" alt="Centurion University Logo" class="logo">
         <h1 class="heading">Courseware</h1>
         <p class="tagline">Empowering Education Through Technology</p>
     </div>
